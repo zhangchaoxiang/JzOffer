@@ -18,7 +18,7 @@ import java.util.Queue;
  * @Date 2020/1/17
  **/
 public class 孩子们的游戏_圆圈中最后剩下的数 {
-    //可以用一个队列
+    //可以用一个队列 或者环形链表
     public int LastRemaining_Solution(int n, int m) {
         if(n<=0||m<=0){return -1;}
         if(m==1){return n;}
@@ -38,5 +38,13 @@ public class 孩子们的游戏_圆圈中最后剩下的数 {
         }
 
         return queue.peek();
+    }
+
+
+    //见到的一个解法
+    public int LastRemaining_Solution1(int n, int m) {
+        // 不满足的条件
+        if (n <= 0 || m <= 0) return -1;
+        return n == 1 ? 0 : (LastRemaining_Solution1(n - 1, m) + m) % n;
     }
 }
