@@ -41,7 +41,15 @@ public class 孩子们的游戏_圆圈中最后剩下的数 {
     }
 
 
-    //见到的一个解法
+    /**
+     * 约瑟夫环问题
+     * 递推公式
+     * f[1]=0;
+     * f[i]=(f[i-1]+m) mod i; (i>1）
+     * @param n
+     * @param m
+     * @return
+     */
     public int LastRemaining_Solution1(int n, int m) {
         // 不满足的条件
         if (n <= 0 || m <= 0) return -1;
